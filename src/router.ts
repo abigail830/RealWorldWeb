@@ -5,8 +5,6 @@ import Home from './views/Home.vue';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -16,32 +14,27 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('./views/Login.vue'),
+      component: () => import('@/views/Login.vue'),
     },
     {
       path: '/register',
       name: 'register',
-      component: () => import('./views/Register.vue'),
-    },
-    {
-      path: '/profile',
-      name: 'profile',
-      component: () => import('./views/Profile.vue'),
-    },
-    {
-      path: '/article',
-      name: 'article',
-      component: () => import('./views/Article.vue'),
-    },
-    {
-      path: '/create-article',
-      name: 'create-article',
-      component: () => import('./views/CreateArticle.vue'),
+      component: () => import('@/views/Register.vue'),
     },
     {
       path: '/settings',
       name: 'settings',
-      component: () => import('./views/Settings.vue'),
+      component: () => import('@/views/Settings.vue'),
+    },
+    // {
+    //   path: '/editor',
+    //   name: 'editor',
+    //   component: () => import('@/views/Editor.vue'),
+    // },
+    {
+      path: '/@:username',
+      name: 'profile',
+      component: () => import('@/views/Profile.vue'),
     },
   ],
 });
